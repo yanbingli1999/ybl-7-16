@@ -14,6 +14,7 @@ import SensitivityChart from '@/components/SensitivityChart';
 import StatsCards from '@/components/StatsCards';
 import SimulationHistory from '@/components/SimulationHistory';
 import CompareModal from '@/components/CompareModal';
+import RiskExplanationCard from '@/components/RiskExplanationCard';
 
 const VARIABLE_TYPE_CONFIG: Record<VariableType, { label: string; color: string; icon: any; defaultWeight: number; defaultUnit: string }> = {
   cost: { label: '成本', color: 'bg-red-500/20 text-red-300 border-red-500/40', icon: DollarSign, defaultWeight: -1, defaultUnit: '万元' },
@@ -485,6 +486,8 @@ export default function ProjectDetail() {
 
                   <StatsCards sim={currentSimulation} />
                 </div>
+
+                <RiskExplanationCard sim={currentSimulation} />
 
                 <HistogramChart sim={currentSimulation} />
 
